@@ -15,9 +15,9 @@ int main(int args_count, char** args ) {
 	println_universal(word);
 	UniversalType likes_programming = new_bool(1);
 	println_universal(likes_programming);
-	// UniversalType result = arithmetic(new_int(24), new_float(3.2), MULTIPLY);
-	// UniversalType wtf = arithmetic(new_string("what "), new_string("the"), ADD);
-	// append_to_string(&wtf, new_string(" fuck?"));
-	// println_universal(wtf);
+	UniversalType result = arithmetic(new_int(24), new_float(3.2), MULTIPLY);
+	UniversalType wtf = arithmetic(new_string("what "), new_string("the"), ADD);
+	append_to_string(&wtf, new_string(" fuck?"));
+	println_universal(wtf);
 	return 0;
 }

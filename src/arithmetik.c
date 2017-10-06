@@ -66,7 +66,7 @@ UniversalType arithmetic( UniversalType first, UniversalType second, Operator op
 			switch (operator) {
 				case ADD:
 				result.value_string = malloc( strlen(first.value_string) + strlen(second.value_string) +1 );
-				strcpy(first.value_string, result.value_string);
+				strcpy(result.value_string, first.value_string);
 				strcat(result.value_string, second.value_string);
 				break;
 			default:
