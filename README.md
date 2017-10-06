@@ -8,5 +8,7 @@ UniversalType real_number = new_float(1.23);            // double precision floa
 UniversalType word = new_string("Hello, World!");       // a string type
 UniversalType prefers_rust_programming = new_bool(1);   // simple boolean
 
-UniversalType result = arithmetik(new_int(24), new_float(3.2), MULTIPLY); // you can operate with them
+arithmetik(new_int(24), new_float(3.2), MULTIPLY); // you can operate with them
+arithmetik(new_string("what "), new_string("the fuck?"), ADD); //Automatic String Concation
+
 ```
