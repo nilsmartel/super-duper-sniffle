@@ -18,7 +18,7 @@ UniversalType arithmetik( UniversalType first, UniversalType second, Operator op
 
 	if (second.data_type != result.data_type) {
 		first = convert_type(first, result.data_type)
-	} 
+	}
 
 	switch (result.data_type) {
 		case BOOLEAN:
@@ -37,7 +37,7 @@ UniversalType arithmetik( UniversalType first, UniversalType second, Operator op
 					break;
 				case DIVIDE:
 					result.value_int = first.value_int / second.value_int;
-					break;	
+					break;
 				case MODULO:
 					result.value_int = first.value_int % second.value_int;
 					break;
@@ -56,7 +56,7 @@ UniversalType arithmetik( UniversalType first, UniversalType second, Operator op
 					break;
 				case DIVIDE:
 					result.value_float = first.value_float / second.value_float;
-					break;	
+					break;
 				case MODULO:
 					result.value_float = fmod(first.value_float,second.value_float);
 					break;
@@ -73,7 +73,7 @@ UniversalType arithmetik( UniversalType first, UniversalType second, Operator op
 				quit_programm(error_bad_string_operation);
 				break;
 			}
-			break;	
+			break;
 	}
 
 	return result;

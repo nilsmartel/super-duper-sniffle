@@ -61,7 +61,7 @@ UniversalType new_string_from_int(int value) {
 		.data_type = STRING,
 		.value_string = malloc(12)
 	};
-	
+
 	sprintf(data.value_string, "%i", value);
 
 	return data;
@@ -72,7 +72,7 @@ UniversalType new_string_from_float(double value) {
 		.data_type = STRING,
 		.value_string = malloc(32)
 	};
-	
+
 	sprintf(data.value_string, "%f", value);
 
 	return data;
@@ -90,7 +90,7 @@ UniversalType convert_type(UniversalType input, TypeTag type) {
 				case FLOAT: return new_bool( (int) input.value_float);
 				case STRING: return new_bool( strlen(input.value_string));
 			}
-			break; 
+			break;
 
 		case INTEGER:
 			switch (input.data_type) {
@@ -117,4 +117,30 @@ UniversalType convert_type(UniversalType input, TypeTag type) {
 			}
 			break;
 	}
+}
+
+void print_universal(UniversalType input) {
+	switch (input.data_type) {
+		case BOOLEAN:
+			if (input.value_boolean) {
+				printf("true");
+			} else {
+				printf("false");
+			}
+			break;
+		case INTEGER:
+			printf("%i", input.value_int);
+			break;
+		case FLOAT:
+			printf("%f", input.value_float);
+			break;
+		case STRING:
+			printf("%s", input.value_string);
+			break;
+	}
+}
+
+void println_universal(UniversalType input) {
+	print_universal(input);
+	putc('\n');
 }
