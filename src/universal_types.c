@@ -26,7 +26,7 @@ UniversalType new_int(int value) {
 }
 
 UniversalType new_bool(int value) {
-	if (value > 1 || value < 0) value = 1;
+	if (value != 0) value = 1;
 
 	UniversalType data = {
 		.data_type = BOOLEAN,
