@@ -45,13 +45,13 @@ UniversalType new_float(double value) {
 	return data;
 }
 
-UniversalType new_string(char* value) {
+UniversalType new_string(const char* value) {
 	UniversalType data = {
 		.data_type = STRING,
 		.value_string = malloc(strlen(value)+1)
 	};
-
-	strcpy(value,data.value_string);
+	
+	strcpy(data.value_string, value);
 
 	return data;
 }
@@ -142,5 +142,5 @@ void print_universal(UniversalType input) {
 
 void println_universal(UniversalType input) {
 	print_universal(input);
-	putc('\n');
+	printf("\n");
 }
