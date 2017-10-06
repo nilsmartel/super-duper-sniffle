@@ -8,7 +8,7 @@ typedef enum {
 	MODULO
 } Operator;
 
-UniversalType arithmetik( UniversalType first, UniversalType second, Operator operator) {
+UniversalType arithmetic( UniversalType first, UniversalType second, Operator operator) {
 	UniversalType result;
 	result.data_type = first.data_type>second.data_type? first.data_type : second.data_type;
 
@@ -17,7 +17,7 @@ UniversalType arithmetik( UniversalType first, UniversalType second, Operator op
 	}
 
 	if (second.data_type != result.data_type) {
-		first = convert_type(first, result.data_type)
+		second = convert_type(second, result.data_type)
 	}
 
 	switch (result.data_type) {
@@ -77,4 +77,23 @@ UniversalType arithmetik( UniversalType first, UniversalType second, Operator op
 	}
 
 	return result;
+}
+
+void append_to_string(UniversalType *first, UniversalType, second) {
+	byte free_second = 0;
+	if (first->data_type != STRING) {
+		*first = convert_type(*first, STRING);
+	}
+
+	if (second.data_type != STRING) {
+		second = convert_type(second, STRING);
+		free_second = true;
+	}
+
+	first.value_string = realloc(first.value_string,
+		strlen(first.value_string)+
+		strlen(first.value_string)+1 );
+	strcat(first.value_string, second.value_string);
+
+	if (free_second) free(second.value_string);
 }
