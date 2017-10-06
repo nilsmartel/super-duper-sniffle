@@ -8,7 +8,8 @@ UniversalType real_number = new_float(1.23);            // double precision floa
 UniversalType word = new_string("Hello, World!");       // a string type
 UniversalType prefers_rust_programming = new_bool(1);   // simple boolean
 
-arithmetic(new_int(24), new_float(3.2), MULTIPLY); // you can operate with them
-arithmetic(new_string("what "), new_string("the fuck?"), ADD); //Automatic String Concation
-
+UniversalType result = arithmetic(new_int(24), new_float(3.2), MULTIPLY); // you can operate with them
+UniversalType wtf = arithmetic(new_string("what "), new_string("the"), ADD); //Automatic String Concation
+append_to_string(&wtf, new_string(" fuck?"));	//Easy String Concatination
+println_universal(wtf);	//printing universal varibles
 ```
