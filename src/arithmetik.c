@@ -1,5 +1,8 @@
 
-
+/**
+ * Operator
+ * operators that can be used to perform arithmetic
+ */
 typedef enum {
 	ADD,
 	SUBTRACT,
@@ -8,6 +11,13 @@ typedef enum {
 	MODULO
 } Operator;
 
+/**
+ * arithmetic
+ * @param  first    [first variable to perform operation on]
+ * @param  second   [second variable to perfom operation on]
+ * @param  operator [operator to be used on the arithmetic operation]
+ * @return          [result of operation]
+ */
 UniversalType arithmetic( UniversalType first, UniversalType second, Operator operator) {
 	UniversalType result;
 	result.data_type = first.data_type>second.data_type? first.data_type : second.data_type;
