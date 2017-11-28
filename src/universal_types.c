@@ -1,4 +1,3 @@
-
 typedef enum {
 	BOOLEAN,
 	INTEGER,
@@ -48,7 +47,7 @@ UniversalType new_float(double value) {
 UniversalType new_string(const char* value) {
 	UniversalType data = {
 		.data_type = STRING,
-		.value_string = malloc(strlen(value)+1)
+		.value_string = malloc(strlen(value) + 1)
 	};
 	
 	strcpy(data.value_string, value);

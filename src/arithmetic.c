@@ -1,4 +1,3 @@
-
 /**
  * Operator
  * operators that can be used to perform arithmetic
@@ -18,7 +17,7 @@ typedef enum {
  * @param  operator [operator to be used on the arithmetic operation]
  * @return          [result of operation]
  */
-UniversalType arithmetic( UniversalType first, UniversalType second, Operator operator) {
+UniversalType arithmetic(UniversalType first, UniversalType second, Operator operator) {
 	UniversalType result;
 	result.data_type = first.data_type>second.data_type? first.data_type : second.data_type;
 
@@ -75,7 +74,7 @@ UniversalType arithmetic( UniversalType first, UniversalType second, Operator op
 		case STRING:
 			switch (operator) {
 				case ADD:
-				result.value_string = malloc( strlen(first.value_string) + strlen(second.value_string) +1 );
+				result.value_string = malloc( strlen(first.value_string) + strlen(second.value_string) + 1);
 				strcpy(result.value_string, first.value_string);
 				strcat(result.value_string, second.value_string);
 				break;
@@ -101,8 +100,8 @@ void append_to_string(UniversalType *first, UniversalType second) {
 	}
 
 	first->value_string = realloc(first->value_string,
-		strlen(first->value_string)+
-		strlen(first->value_string)+1 );
+		strlen(first->value_string) +
+		strlen(first->value_string) + 1);
 	strcat(first->value_string, second.value_string);
 
 	if (free_second) free(second.value_string);

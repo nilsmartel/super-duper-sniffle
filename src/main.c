@@ -4,9 +4,9 @@
 #include <math.h>
 #include "universal_types.c"
 #include "error.c"
-#include "arithmetik.c"
+#include "arithmetic.c"
 
-int main(int args_count, char** args ) {
+int main(int args_count, char** args) {
 	UniversalType integer_number = new_int(314); 
 	println_universal(integer_number);
 	
